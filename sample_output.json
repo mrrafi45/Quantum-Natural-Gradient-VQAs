@@ -1,0 +1,163 @@
+{
+  "config": {
+    "n_qubits": 4,
+    "n_layers": 3,
+    "edge_weights": {
+      "(0, 1)": 1.5,
+      "(0, 2)": 1.0,
+      "(1, 3)": 0.8,
+      "(2, 3)": 1.2
+    },
+    "learning_rate": 0.1,
+    "max_iterations": 100,
+    "convergence_threshold": 0.1,
+    "n_shots": 8192,
+    "theta_init_range": 0.1,
+    "n_trials": 50
+  },
+  "platform": "trapped_ion",
+  "timestamp": "2025-11-15T10:30:00.000000",
+  "description": "Sample results matching paper Table 2 (trapped-ion noise model)",
+  "paper_reference": "Section III.A — Main Convergence Results",
+  "summary": {
+    "QNG": {
+      "success_rate_percent": 95.0,
+      "mean_iterations_all": 20.3,
+      "mean_iterations_converged": 15.3,
+      "std_iterations_converged": 3.1,
+      "mean_wall_clock_time_s": 287.4,
+      "std_wall_clock_time_s": 22.8,
+      "mean_final_cost": -3.10,
+      "std_final_cost": 0.18,
+      "n_converged": 47,
+      "n_trials": 50
+    },
+    "VGD": {
+      "success_rate_percent": 30.0,
+      "mean_iterations_all": 95.0,
+      "mean_iterations_converged": 95.0,
+      "std_iterations_converged": 0.0,
+      "mean_wall_clock_time_s": 342.1,
+      "std_wall_clock_time_s": 45.2,
+      "mean_final_cost": -1.82,
+      "std_final_cost": 0.41,
+      "n_converged": 15,
+      "n_trials": 50
+    }
+  },
+  "improvements": {
+    "convergence_rate_ratio": 3.17,
+    "iterations_ratio": 6.20,
+    "wall_clock_speedup_percent": 16.0,
+    "final_cost_improvement_percent": 70.3
+  },
+  "QNG": [
+    {
+      "method": "QNG",
+      "converged": true,
+      "iterations": 14,
+      "final_cost": -3.21,
+      "wall_clock_time": 278.3,
+      "cost_history": [
+        -0.42, -0.89, -1.31, -1.72, -2.05, -2.34, -2.57, -2.74,
+        -2.87, -2.96, -3.03, -3.08, -3.12, -3.15, -3.21
+      ],
+      "gradient_norm_history": [
+        0.412, 0.358, 0.301, 0.248, 0.198, 0.162, 0.131, 0.106,
+        0.083, 0.065, 0.050, 0.038, 0.028, 0.021
+      ],
+      "qfim_condition_history": [
+        12.4, 14.2, 16.1, 18.3, 21.0, 19.8, 18.2, 17.1,
+        16.0, 15.3, 14.8, 14.2, 13.9, 13.7
+      ],
+      "seed": 42
+    },
+    {
+      "method": "QNG",
+      "converged": true,
+      "iterations": 17,
+      "final_cost": -3.18,
+      "wall_clock_time": 291.6,
+      "cost_history": [
+        -0.31, -0.76, -1.18, -1.55, -1.88, -2.16, -2.39, -2.58,
+        -2.73, -2.84, -2.93, -2.99, -3.04, -3.08, -3.11, -3.14, -3.18
+      ],
+      "gradient_norm_history": [
+        0.389, 0.334, 0.282, 0.233, 0.188, 0.151, 0.122, 0.098,
+        0.078, 0.061, 0.048, 0.037, 0.029, 0.023, 0.018, 0.014
+      ],
+      "qfim_condition_history": [
+        10.8, 12.3, 14.0, 15.8, 17.9, 17.2, 16.4, 15.7,
+        15.1, 14.6, 14.2, 13.9, 13.7, 13.5, 13.4, 13.3
+      ],
+      "seed": 43
+    },
+    {
+      "method": "QNG",
+      "converged": false,
+      "iterations": 100,
+      "final_cost": -2.31,
+      "wall_clock_time": 342.8,
+      "cost_history": [
+        -0.08, -0.12, -0.15, -0.17, -0.19, -0.21, -0.22, -0.23,
+        -0.24, -0.25, -0.26, -0.27, -0.28, -0.29, -0.30
+      ],
+      "gradient_norm_history": [
+        0.021, 0.018, 0.016, 0.014, 0.013, 0.012, 0.011, 0.010,
+        0.010, 0.009, 0.009, 0.009, 0.008, 0.008, 0.008
+      ],
+      "qfim_condition_history": [
+        8823.1, 9102.4, 9341.7, 9578.2, 9812.4, 10024.1, 10198.3, 10342.7,
+        10461.2, 10553.8, 10622.4, 10668.9, 10695.1, 10703.4, 10705.2
+      ],
+      "seed": 44,
+      "note": "Barren plateau: QFIM ill-conditioned; regularization insufficient for this init"
+    }
+  ],
+  "VGD": [
+    {
+      "method": "VGD",
+      "converged": true,
+      "iterations": 95,
+      "final_cost": -3.24,
+      "wall_clock_time": 321.4,
+      "cost_history": [
+        -0.39, -0.43, -0.48, -0.53, -0.59, -0.65, -0.72, -0.79,
+        -0.87, -0.95, -1.03, -1.11, -1.20, -1.29, -1.37
+      ],
+      "gradient_norm_history": [
+        0.054, 0.052, 0.049, 0.047, 0.045, 0.043, 0.041, 0.039,
+        0.037, 0.036, 0.034, 0.033, 0.031, 0.030, 0.029
+      ],
+      "qfim_condition_history": [],
+      "seed": 42
+    },
+    {
+      "method": "VGD",
+      "converged": false,
+      "iterations": 100,
+      "final_cost": -0.87,
+      "wall_clock_time": 338.2,
+      "cost_history": [
+        -0.08, -0.09, -0.09, -0.10, -0.10, -0.11, -0.11, -0.11,
+        -0.12, -0.12, -0.12, -0.12, -0.12, -0.13, -0.13
+      ],
+      "gradient_norm_history": [
+        0.004, 0.004, 0.003, 0.003, 0.003, 0.003, 0.003, 0.003,
+        0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002
+      ],
+      "qfim_condition_history": [],
+      "seed": 43,
+      "note": "Barren plateau: gradient vanished; failed to converge in 100 iterations"
+    }
+  ],
+  "noise_model_parameters": {
+    "platform": "IonQ Forte (Nov 2025)",
+    "p1q": 1e-4,
+    "p2q": 3.5e-3,
+    "readout_error": 0.01,
+    "t1_ms": 100.0,
+    "t2_ms": 50.0,
+    "gate_time_ns": 100.0
+  }
+}
